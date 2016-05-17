@@ -19,7 +19,9 @@ export default class GameState extends State {
     this.asteroids = [];
     for(var i = 0; i < 10; i++) {
       const n = Math.round(Math.random() * (Points.ASTEROIDS.length - 1));
-      var astr = new Asteroid(Points.ASTEROIDS[n], 10, 300, 200)
+      const x = Math.round(Math.random() * 640)
+      const y = Math.round(Math.random() * 480)
+      var astr = new Asteroid(Points.ASTEROIDS[n], 10, x, y)
 
       this.asteroids.push(astr);
     }

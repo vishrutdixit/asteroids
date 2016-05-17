@@ -15,6 +15,11 @@ export default class Asteroid extends Polygon {
       x: vel * Math.cos(radians),
       y: vel * Math.sin(radians)
     }
+
+    // this.img = new Image()
+    // this.img.src = 'http://vignette2.wikia.nocookie.net/pikmin/images/a/aa/Rubber-duck.jpg/revision/latest?cb=20150206003953'
+    this.img = document.getElementById('testImg')
+    // console.log(this.img)
   }
 
   update() {
@@ -26,6 +31,11 @@ export default class Asteroid extends Polygon {
 
   draw(ctx) {
     ctx.drawPolygon(this, this.x, this.y)
+    // console.log(this.img)
+    this.img.onload = function() {
+      // console.log(this)
+      ctx.drawImage(this, 0, 0)
+    }
   }
 
 }
